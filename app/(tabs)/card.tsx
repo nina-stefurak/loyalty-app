@@ -35,6 +35,7 @@ export default function TabTwoScreen() {
         <TextInput
           label="Kod"
           value={inputValue}
+          activeUnderlineColor={'#9a8c98'}
           onChangeText={text => setInputValue(text)}
           style={styles.input}
           keyboardType="numeric"
@@ -42,7 +43,7 @@ export default function TabTwoScreen() {
         <Button mode="contained" onPress={handleAddPoints} style={styles.button}>
           Dodaj punkty
         </Button>
-        <ProgressBar progress={points / 5} color={MD3Colors.primary50} style={styles.progressBar} />
+        <ProgressBar progress={points / 5} color={'#bcb8b1'} style={styles.progressBar} />
         <ThemedText style={styles.pointsText}>
           {points} / 5 punktów
         </ThemedText>
@@ -81,13 +82,16 @@ const styles = StyleSheet.create({
   input: {
     marginBottom: 10,
     backgroundColor: 'white',
+    
   },
   button: {
     marginBottom: 20,
+    backgroundColor: '#bcb8b1',
   },
   progressBar: {
-    height: 10,
+    height: 30,
     marginBottom: 10,
+    backgroundColor: '#EDEDE9'
   },
   pointsText: {
     textAlign: 'center',

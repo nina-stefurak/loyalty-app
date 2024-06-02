@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Platform, View } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { FAB, Portal, Modal, Provider, Text } from 'react-native-paper';
+import * as ScreenOrientation from 'expo-screen-orientation';
 
 export default function HomeScreen() {
   const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    // Funkcja do ustawiania orientacji
+    const setOrientation = async () => {
+      await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT);
+    };
+
+    setOrientation();
+
+    return () => {
+      // Przywracanie domyślnej orientacji
+      ScreenOrientation.unlockAsync();
+    };
+  }, []);
 
   const showModal = () => setVisible(true);
   const hideModal = () => setVisible(false);
