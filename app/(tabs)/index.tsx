@@ -49,15 +49,15 @@ export default function HomeScreen() {
           </ThemedText>
         </ThemedView>
         <ThemedView style={styles.stepContainer}>
-          <ThemedText type="subtitle">Zniżka -10% i -20%</ThemedText>
+          <ThemedText type="subtitle">Zniżka -10%</ThemedText>
           <ThemedText>
-            na 5 i 10 zakup w jednym z naszych sklepów z kartą lojalnościową.
+            na 5, 10 i 15 zakup w jednym z naszych sklepów z kartą lojalnościową.
           </ThemedText>
         </ThemedView>
         <ThemedView style={styles.stepContainer}>
           <ThemedText type="subtitle">Darmowa książka</ThemedText>
           <ThemedText>
-            masz 15 punktów, to przy zakupie książek, tańszą dostaniesz za darmo!
+            jeśli masz 20 punktów, to przy zakupie dwóch książek, tańszą dostaniesz za darmo!
           </ThemedText>
         </ThemedView>
       </ParallaxScrollView>

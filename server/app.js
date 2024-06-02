@@ -1,15 +1,17 @@
 import express from 'express';
+import cors from 'cors';
 
 const app = express();
 // Use express.json() middleware to parse JSON bodies
 app.use(express.json());
+app.use(cors());
 
-app.listen(3000, '127.0.0.1', () => {
-  console.log('Listening on 127.0.0.1:3000');
+app.listen(3000, '0.0.0.0', () => {
+  console.log('Listening on 0.0.0.0:3000');
 });
 
 //10 random 4 digit codes to be generated
-const codes = Array.from({length: 10},
+const codes = Array.from({length: 50},
     () => Math.floor(Math.random() * 9000) + 1000);
 console.log(codes);
 
