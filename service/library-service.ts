@@ -3,7 +3,7 @@ export interface LibraryService {
 }
 
 class LibraryServiceImpl implements LibraryService {
-    private URL: string = "http://192.168.50.65:3000/verify";
+    private URL: string = "http://172.20.10.5:3000/verify";
 
     async verifyCode(code: number): Promise<boolean> {
         const result = await fetch(this.URL, {

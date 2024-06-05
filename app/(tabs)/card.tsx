@@ -54,6 +54,13 @@ export default function TabTwoScreen() {
    
     setInputValue('');
   };
+   const handleRemovePoints = async () => {
+    let newPoints = await points;
+    newPoints--;
+    await pointsRepository.removePoints(5);
+
+    setPoints(newPoints);
+   };
 
   const handleRewards = (points: number) => {
     setRewardMessages([]);
@@ -110,6 +117,12 @@ export default function TabTwoScreen() {
           ))}
           <ThemedText>Za każde 5 punktów dostaniesz zniżkę 10%</ThemedText>
         </Collapsible>
+        <Button 
+          mode="contained" 
+          onPress={handleRemovePoints} 
+          style={styles.button}>
+          Wykorzystaj zniżkę
+        </Button>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -136,7 +149,8 @@ const styles = StyleSheet.create({
     
   },
   button: {
-    marginBottom: 20,
+    marginTop: 16,
+    marginBottom: 24,
     backgroundColor: '#bcb8b1',
   },
   progressBar: {

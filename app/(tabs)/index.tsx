@@ -11,7 +11,7 @@ export default function HomeScreen() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Funkcja do ustawiania orientacji
+
     const setOrientation = async () => {
       await ScreenOrientation.lockAsync(ScreenOrientation.OrientationLock.DEFAULT);
     };
@@ -19,7 +19,7 @@ export default function HomeScreen() {
     setOrientation();
 
     return () => {
-      // Przywracanie domyślnej orientacji
+
       ScreenOrientation.unlockAsync();
     };
   }, []);
